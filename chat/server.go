@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 )
 
@@ -12,5 +13,5 @@ func Auth(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.HandleFunc("/auth", Auth)
 	fmt.Println("listening on :8080")
-	http.ListenAndServe(":8080", nil)
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
