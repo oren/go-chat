@@ -13,6 +13,7 @@ func TestAuth(t *testing.T) {
 	defer ts.Close()
 
 	body := bytes.NewBufferString(`{"login":"brian","password":"p4$$"}`)
+
 	resp, err := http.Post(ts.URL+"/auth", "application/json", body)
 	if err != nil {
 		t.Fatal(err)
